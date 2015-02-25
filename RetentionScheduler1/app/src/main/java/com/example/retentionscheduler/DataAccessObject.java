@@ -1,3 +1,14 @@
+/*“This is a course requirement for CS 192 Software Engineering II under the supervision of Asst. Prof. Ma. Rowena C. Solamo of the Department of Computer Science, College of Engineering, University of the Philippines, Diliman for the AY 2014-2015”.
+ Neil Jonathan A. Joaquin
+ David Relao
+ Aldrin Simpao*/
+/*Code History:
+Initial Code Authored by: Neil Jonathan A. Joaquin, David Relao*/
+/* File Creation Date:
+    Development Group: Blue Navy Inc.
+    Client Group:
+    Purpose of file: Object that writes and reads from a text file
+*/
 package com.example.retentionscheduler;
 
 import java.io.BufferedReader;
@@ -23,6 +34,15 @@ public class DataAccessObject{
 	DataAccessObject (Context fileContext) {
 		DataAccessObject.fileContext = fileContext;
 	}
+
+     /*
+     Method name: onClick
+     Purpose: Creates the clickable buttons
+     Calling Arguments:
+     Required Files:
+     Database Tables:
+     Return value: None
+     */
 
 	public void writeFile(EditText name, EditText description, EditText date, EditText time, String files) {
 		try {
@@ -59,6 +79,15 @@ public class DataAccessObject{
 		};
 	}
 
+     /*
+     Method name: onClick
+     Purpose: Creates the clickable buttons
+     Calling Arguments:
+     Required Files:
+     Database Tables:
+     Return value: None
+     */
+
 	public void readFile() throws FileNotFoundException{
 		InputStream inputStream = fileContext.openFileInput("database.txt");
 		String current="";
@@ -84,6 +113,15 @@ public class DataAccessObject{
 		current += "\n\n";
 		System.out.println(current);
 	}
+
+     /*
+     Method name: onClick
+     Purpose: Creates the clickable buttons
+     Calling Arguments:
+     Required Files:
+     Database Tables:
+     Return value: None
+     */
 	
 	public String getString() {
 		this.global = global;

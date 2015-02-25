@@ -1,3 +1,14 @@
+/*“This is a course requirement for CS 192 Software Engineering II under the supervision of Asst. Prof. Ma. Rowena C. Solamo of the Department of Computer Science, College of Engineering, University of the Philippines, Diliman for the AY 2014-2015”.
+ Neil Jonathan A. Joaquin
+ David Relao
+ Aldrin Simpao*/
+/*Code History:
+Initial Code Authored by: Neil Jonathan A. Joaquin, David Relao*/
+/* File Creation Date:
+    Development Group: Blue Navy Inc.
+    Client Group:
+    Purpose of file: Main Executable Android File.
+*/
 package com.example.retentionscheduler;
 import java.util.Date;
 
@@ -18,15 +29,25 @@ import android.widget.Button;
 
 
 public class MainActivity extends ActionBarActivity implements OnClickListener {
-	 CalendarView calendarView;
-	 private Button button_manage;
-	 private Button button_viewevents;
-	 @Override
-	 protected void onCreate(Bundle savedInstanceState) {
-		  super.onCreate(savedInstanceState);
-		  setContentView(R.layout.home);
-		  button_manage = (Button)findViewById(R.id.manage);
-		  button_manage.setOnClickListener(this);
+     CalendarView calendarView;
+	private Button button_manage;
+	private Button button_viewevents;
+
+      /*
+     Method name: onCreate
+     Purpose: Sets the xml. Creates the clickable buttons
+     Calling Arguments:Bundle savedInstanceState
+     Required Files:
+     Database Tables:
+     Return value: None
+     */
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+          super.onCreate(savedInstanceState);
+		setContentView(R.layout.home);
+		button_manage = (Button)findViewById(R.id.manage);
+		button_manage.setOnClickListener(this);
 
 		calendarView=(CalendarView) findViewById(R.id.calendarView1);
 		calendarView.setOnDateChangeListener(new OnDateChangeListener() {
@@ -44,6 +65,15 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 		});
 	}
 
+      /*
+     Method name: onClick
+     Purpose: Links the clickable buttons to their associated activity
+     Calling Arguments: View v
+     Required Files:
+     Database Tables:
+     Return value: None
+     */
+
 	public void onClick(View v){
 		//respond to click
 		if(v.getId()==button_manage.getId()){
@@ -52,6 +82,7 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 			startActivity(intent);
 		}
 	}
+
 
 
 	@Override

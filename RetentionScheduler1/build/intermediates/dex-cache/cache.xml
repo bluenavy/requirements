@@ -2,6 +2,13 @@
 <items version="2" >
 
     <item
+        jar="C:\Users\neil\AndroidStudioProjects\RetentionScheduler1\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="C:\Users\neil\AndroidStudioProjects\RetentionScheduler1\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-cce04643a02a3b8b36cac91af6687c457a348132.jar" />
+    </item>
+    <item
         jar="C:\Users\neil\AppData\Local\Android\sdk1\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
         jumboMode="false"
         revision="21.1.2"
@@ -9,11 +16,11 @@
         <dex dex="C:\Users\neil\AndroidStudioProjects\RetentionScheduler1\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-3c8b31d949e16dab79564a173fe6508cc6846f6b.jar" />
     </item>
     <item
-        jar="C:\Users\neil\AndroidStudioProjects\RetentionScheduler1\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
+        jar="C:\Users\neil\AndroidStudioProjects\RetentionScheduler1\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
-        <dex dex="C:\Users\neil\AndroidStudioProjects\RetentionScheduler1\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-cce04643a02a3b8b36cac91af6687c457a348132.jar" />
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="C:\Users\neil\AndroidStudioProjects\RetentionScheduler1\app\build\intermediates\pre-dexed\debug\classes-4c4660b933f0646e5bd53086bd67a82c0596a8f0.jar" />
     </item>
     <item
         jar="C:\Users\neil\AndroidStudioProjects\RetentionScheduler1\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\20.0.0\classes.jar"
@@ -28,13 +35,6 @@
         revision="21.1.2"
         sha1="e5531cb41e35c81a051a274945542f6b31e4c97e">
         <dex dex="C:\Users\neil\AndroidStudioProjects\RetentionScheduler1\app\build\intermediates\pre-dexed\debug\classes-389811a4409410cd85ef8cc6e179ec577cf0ac7b.jar" />
-    </item>
-    <item
-        jar="C:\Users\neil\AndroidStudioProjects\RetentionScheduler1\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
-        <dex dex="C:\Users\neil\AndroidStudioProjects\RetentionScheduler1\app\build\intermediates\pre-dexed\debug\classes-4c4660b933f0646e5bd53086bd67a82c0596a8f0.jar" />
     </item>
 
 </items>

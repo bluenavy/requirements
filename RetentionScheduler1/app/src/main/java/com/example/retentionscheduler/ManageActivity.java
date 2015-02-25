@@ -1,3 +1,14 @@
+/*“This is a course requirement for CS 192 Software Engineering II under the supervision of Asst. Prof. Ma. Rowena C. Solamo of the Department of Computer Science, College of Engineering, University of the Philippines, Diliman for the AY 2014-2015”.
+ Neil Jonathan A. Joaquin
+ David Relao
+ Aldrin Simpao*/
+/*Code History:
+Initial Code Authored by: Neil Jonathan A. Joaquin, David Relao*/
+/* File Creation Date:
+    Development Group: Blue Navy Inc.
+    Client Group:
+    Purpose of file: Manage Activity.
+*/
 package com.example.retentionscheduler;
 
 import android.content.Intent;
@@ -15,6 +26,15 @@ import android.widget.Toast;
 public class ManageActivity extends ActionBarActivity implements OnClickListener {
 	
 	private Button create_button;
+
+     /*
+     Method name: onCreate
+     Purpose: Sets the xml. Creates the clickable buttons
+     Calling Arguments:Bundle savedInstanceState
+     Required Files:
+     Database Tables:
+     Return value: None
+     */
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +43,15 @@ public class ManageActivity extends ActionBarActivity implements OnClickListener
         create_button = (Button)findViewById(R.id.createbutton);
         create_button.setOnClickListener(this);
     }
+
+     /*
+     Method name: onClick
+     Purpose: Links the clickable buttons to their associated activity
+     Calling Arguments: View v
+     Required Files:
+     Database Tables:
+     Return value: None
+     */
 	
 	public void onClick(View v){
 		if(v.getId()==create_button.getId()){

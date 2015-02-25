@@ -1,5 +1,17 @@
+/*“This is a course requirement for CS 192 Software Engineering II under the supervision of Asst. Prof. Ma. Rowena C. Solamo of the Department of Computer Science, College of Engineering, University of the Philippines, Diliman for the AY 2014-2015”.
+ Neil Jonathan A. Joaquin
+ David Relao
+ Aldrin Simpao*/
+/*Code History:
+Initial Code Authored by: Neil Jonathan A. Joaquin, David Relao*/
+/* File Creation Date:
+    Development Group: Blue Navy Inc.
+    Client Group:
+    Purpose of file: Creates the Event and save it in a text file.
+*/
 package com.example.retentionscheduler;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -10,6 +22,12 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 
 
 public class CreateEvent extends ActionBarActivity implements OnClickListener {
@@ -26,6 +44,16 @@ public class CreateEvent extends ActionBarActivity implements OnClickListener {
 	StringBuilder stringBuilder = new StringBuilder();
 	
 	DataAccessObject dao = new DataAccessObject(this);
+
+      /*
+     Method name: onCreate
+     Purpose: Sets the xml. Creates the clickable buttons
+     Calling Arguments:Bundle savedInstanceState
+     Required Files:
+     Database Tables:
+     Return value: None
+     */
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +71,15 @@ public class CreateEvent extends ActionBarActivity implements OnClickListener {
         assocButt = (Button) findViewById(R.id.associate_notes);
         assocButt.setOnClickListener(this);
     }
+
+     /*
+     Method name: onClick
+     Purpose: Links the clickable buttons to their associated activity
+     Calling Arguments: View v
+     Required Files:
+     Database Tables:
+     Return value: None
+     */
 	
 	public void onClick(View v){
         //respond to click

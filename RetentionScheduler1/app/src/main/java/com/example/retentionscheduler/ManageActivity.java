@@ -3,11 +3,13 @@
  David Relao
  Aldrin Simpao*/
 /*Code History:
-Initial Code Authored by: Neil Jonathan A. Joaquin, David Relao*/
+Initial Code Authored by: Neil Jonathan A. Joaquin, David Relao
+Version 2.0 Authored by: Neil Jonathan A. Joaquin
+     Added Manage, Calendar*/
 /* File Creation Date:
     Development Group: Blue Navy Inc.
-    Client Group:
-    Purpose of file: Manage Activity.
+    Client Group: Purple McShort Shorts
+    Purpose of file: Manages Activity, Displays Calendar
 */
 package com.example.retentionscheduler;
 
@@ -38,10 +40,10 @@ public class ManageActivity extends ActionBarActivity implements OnClickListener
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.manage);
-        create_button = (Button)findViewById(R.id.createbutton);
-        create_button.setOnClickListener(this);
+          super.onCreate(savedInstanceState);
+          setContentView(R.layout.manage);
+          create_button = (Button)findViewById(R.id.createbutton);
+          create_button.setOnClickListener(this);
     }
 
      /*
@@ -58,7 +60,7 @@ public class ManageActivity extends ActionBarActivity implements OnClickListener
     	    //the button was clicked
     		Intent intent = new Intent(this, CreateEvent.class);
     		startActivity(intent);
-    	}
+    	     }
     }
 	
 	

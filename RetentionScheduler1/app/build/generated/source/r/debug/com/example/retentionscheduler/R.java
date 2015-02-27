@@ -962,7 +962,7 @@ containing a value of this type.
         public static final int alignBounds=0x7f080011;
         public static final int alignMargins=0x7f080012;
         public static final int always=0x7f080024;
-        public static final int associate_notes=0x7f080054;
+        public static final int associate_notes=0x7f080057;
         public static final int beginning=0x7f080021;
         public static final int bottom=0x7f080013;
         public static final int btn_close_popup=0x7f08005c;
@@ -992,9 +992,9 @@ containing a value of this type.
         public static final int event_name=0x7f08004f;
         public static final int expand_activities_button=0x7f080037;
         public static final int expanded_menu=0x7f08003d;
-        public static final int file=0x7f080055;
-        public static final int file1=0x7f080056;
-        public static final int file2=0x7f080057;
+        public static final int file=0x7f080054;
+        public static final int file1=0x7f080055;
+        public static final int file2=0x7f080056;
         public static final int fill=0x7f08001a;
         public static final int fill_horizontal=0x7f08001b;
         public static final int fill_vertical=0x7f08001c;

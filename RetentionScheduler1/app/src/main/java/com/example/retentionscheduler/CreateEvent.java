@@ -6,7 +6,7 @@
 Initial Code Authored by: Neil Jonathan A. Joaquin, David Relao*/
 /* File Creation Date:
     Development Group: Blue Navy Inc.
-    Client Group:
+    Client Group: Purple McShort Shorts
     Purpose of file: Creates the Event and save it in a text file.
 */
 package com.example.retentionscheduler;
@@ -56,9 +56,9 @@ public class CreateEvent extends ActionBarActivity implements OnClickListener {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.create_event);
-        name = (EditText) findViewById(R.id.event_name);
+          super.onCreate(savedInstanceState);
+          setContentView(R.layout.create_event);
+          name = (EditText) findViewById(R.id.event_name);
 		description = (EditText) findViewById(R.id.description_name);
 		date = (EditText) findViewById(R.id.dated);
 		time = (EditText) findViewById(R.id.time);
@@ -66,10 +66,10 @@ public class CreateEvent extends ActionBarActivity implements OnClickListener {
 		file2 = (EditText) findViewById(R.id.file1);
 		file3 = (EditText) findViewById(R.id.file2);
 		
-        theButton = (Button)findViewById(R.id.add_events);
-        theButton.setOnClickListener(this);
-        assocButt = (Button) findViewById(R.id.associate_notes);
-        assocButt.setOnClickListener(this);
+          theButton = (Button)findViewById(R.id.add_events);
+          theButton.setOnClickListener(this);
+          assocButt = (Button) findViewById(R.id.associate_notes);
+          assocButt.setOnClickListener(this);
     }
 
      /*
@@ -82,13 +82,13 @@ public class CreateEvent extends ActionBarActivity implements OnClickListener {
      */
 	
 	public void onClick(View v){
-        //respond to click
+          //respond to click
 		if (v.getId() == R.id.add_events) {
 			try {
 				dao.writeFile(name, description, date, time, stringBuilder.toString());
 				dao.readFile();
 				Toast.makeText(CreateEvent.this, "Event Added!",Toast.LENGTH_LONG).show();
-				Intent intent = new Intent(this, viewInfo.class);
+				Intent intent = new Intent(this, CreateEvent.class);
 				startActivity(intent);
 			}catch (Exception e) {
 				System.out.println(Log.getStackTraceString(e));

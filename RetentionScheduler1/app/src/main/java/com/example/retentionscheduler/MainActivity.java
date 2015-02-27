@@ -6,7 +6,7 @@
 Initial Code Authored by: Neil Jonathan A. Joaquin, David Relao*/
 /* File Creation Date:
     Development Group: Blue Navy Inc.
-    Client Group:
+    Client Group: Purple McShort Shorts
     Purpose of file: Main Executable Android File.
 */
 package com.example.retentionscheduler;

@@ -30,10 +30,10 @@ public class viewInfo extends ActionBarActivity{
      */
 	
 	protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.event_information);
-        TextView view = (TextView) findViewById(R.id.info);
-        view.setText(dao.getString());
+          super.onCreate(savedInstanceState);
+          setContentView(R.layout.event_information);
+          TextView view = (TextView) findViewById(R.id.info);
+          view.setText(dao.getString());
 	}
 	
 	@Override

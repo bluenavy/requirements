@@ -26,19 +26,19 @@ import android.widget.EditText;
 
 public class DataAccessObject{
 	
-	static Context fileContext;
+     static Context fileContext;
 	String receiveString = "";
-    StringBuilder stringBuilder = new StringBuilder();
-    StringBuilder global = new StringBuilder();
+     StringBuilder stringBuilder = new StringBuilder();
+     StringBuilder global = new StringBuilder();
 	
 	DataAccessObject (Context fileContext) {
 		DataAccessObject.fileContext = fileContext;
 	}
 
      /*
-     Method name: onClick
-     Purpose: Creates the clickable buttons
-     Calling Arguments:
+     Method name: writeFile
+     Purpose: Writes the data on a textfile
+     Calling Arguments:EditTex
      Required Files:
      Database Tables:
      Return value: None
@@ -91,7 +91,7 @@ public class DataAccessObject{
 	public void readFile() throws FileNotFoundException{
 		InputStream inputStream = fileContext.openFileInput("database.txt");
 		String current="";
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+          BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
 
 		try {
 			if (inputStream != null) {
@@ -114,18 +114,5 @@ public class DataAccessObject{
 		System.out.println(current);
 	}
 
-     /*
-     Method name: onClick
-     Purpose: Creates the clickable buttons
-     Calling Arguments:
-     Required Files:
-     Database Tables:
-     Return value: None
-     */
-	
-	public String getString() {
-		this.global = global;
-		return global.toString();
-	}
 
 }

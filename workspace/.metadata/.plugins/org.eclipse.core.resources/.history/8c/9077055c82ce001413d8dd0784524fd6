@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+   	android:background="#F3F781"
+    android:weightSum="1">
+
+    <EditText
+        android:id="@+id/event_name"
+	    android:layout_width="match_parent"
+	    android:layout_height="50dp"
+	    android:textColor="#000000"
+	    android:hint="@string/event_name"/>
+
+    <EditText
+       	android:id="@+id/description_name"
+	    android:layout_width="match_parent"
+	    android:layout_height="50dp"
+        android:textColor="#000000"
+	    android:hint="@string/hint_desc"/>
+
+    <Button android:id="@+id/myDatePickerButton"
+        style="@style/ButtonText"
+        android:layout_width="192dp"
+        android:layout_height="wrap_content"
+      	android:layout_gravity="end"
+        android:textColor="#000000"
+        android:padding="10dp"
+        android:onClick="onClick"
+        android:text="Choose Date"/>
+
+    <EditText
+       	android:id="@+id/time"
+	    android:layout_width="match_parent"
+	    android:layout_height="50dp"
+        android:textColor="#000000"
+	    android:hint="@string/hint_time"/>
+
+    <Button
+        android:id="@+id/add_events"
+        style="@style/ButtonText"
+        android:layout_width="192dp"
+        android:layout_height="wrap_content"
+      	android:layout_gravity="end"
+        android:textColor="#000000"
+        android:text="Add"
+        android:background="#2E2EFE"
+        />
+
+    <EditText
+        android:id="@+id/file"
+        android:layout_width="match_parent"
+    	android:layout_height="50dp"
+        android:textColor="#000000"
+        android:hint="Add file"/>
+
+    <EditText
+        android:id="@+id/file1"
+        android:layout_width="match_parent"
+    	android:layout_height="50dp"
+        android:textColor="#000000"
+        android:hint="Add file"/>
+
+    <EditText
+        android:id="@+id/file2"
+        android:layout_width="match_parent"
+    	android:layout_height="50dp"
+        android:textColor="#000000"
+        android:hint="Add file"/>
+
+    <Button
+        android:id="@+id/associate_notes"
+        style="@style/ButtonText"
+        android:layout_width="205dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:textColor="#000000"
+        android:padding="10dp"
+        android:text="Associate"
+        android:layout_gravity="right"
+        android:background="#FF4000"/>
+
+</LinearLayout>

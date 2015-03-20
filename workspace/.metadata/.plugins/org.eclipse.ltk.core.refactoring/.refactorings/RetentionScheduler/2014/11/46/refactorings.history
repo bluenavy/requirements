@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Change Widget Type" description="Change Widget Type" file="/RetentionScheduler/res/layout/activity_main.xml" flags="6" id="com.android.ide.eclipse.adt.refactoring.changeview" proj="/RetentionScheduler" sel-end="913" sel-start="718" stamp="1415905217524" type="android.widget.AnalogClock"/>
+</session>

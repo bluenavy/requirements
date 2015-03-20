@@ -1,0 +1,77 @@
+package com.example.retentionscheduler;
+
+//import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+//import java.io.FileReader;
+import java.io.OutputStreamWriter;
+
+import android.content.Context;
+import android.widget.EditText;
+//import android.widget.Toast;
+
+public class DataAccessObject{
+	
+	public static Context fileContext;
+	
+	DataAccessObject(Context fileContext) {
+		DataAccessObject.fileContext = fileContext;
+	}
+
+	public void writeFile(EditText name, EditText description, EditText date, EditText time) throws FileNotFoundException {
+		try {
+			File myFile = new File("database.txt");
+			myFile.createNewFile();
+			FileOutputStream fOut = new FileOutputStream(myFile);
+			OutputStreamWriter myOutWriter = new OutputStreamWriter(fOut);
+			
+			//System.out.print("Name: ");
+			myOutWriter.append(name.getText());
+			myOutWriter.append("\n");
+
+			//System.out.print("Description: ");
+			myOutWriter.append(description.getText());
+			myOutWriter.append("\n");
+
+			//System.out.print("Date: ");
+			myOutWriter.append(date.getText());
+			myOutWriter.append("\n");
+
+			myOutWriter.append(time.getText());
+			myOutWriter.append("\n");
+			
+			myOutWriter.close();
+			fOut.close();
+			//Toast.makeText(getBaseContext(), "Done writing SD 'mysdfile.txt'", Toast.LENGTH_SHORT).show();
+		}
+		catch (Exception e) {};
+	}
+
+	/*public static void readFile() throws FileNotFoundException{
+		String current = "";
+		File file = new File("database.txt");
+		FileReader fr = new FileReader(file.getAbsoluteFile());
+		BufferedReader br = new BufferedReader(fr);
+
+		try {
+			if (!file.exists()) {
+				file.createNewFile();
+			}
+			while (((current = br.readLine()) != null)) {
+				System.out.println(current);
+			}
+		}
+		catch(Exception e){
+
+		}finally {
+			try {
+				if (br != null) {
+					br.close();
+				}
+			} catch (Exception e) {}
+		}
+
+	}*/
+
+}

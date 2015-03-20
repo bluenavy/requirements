@@ -1,6 +1,0 @@
-C:\Users\neil\AndroidStudioProjects\RetentionScheduler1\app\build\intermediates\classes\debug
-C:\Users\neil\AndroidStudioProjects\RetentionScheduler1\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-3c8b31d949e16dab79564a173fe6508cc6846f6b.jar
-C:\Users\neil\AndroidStudioProjects\RetentionScheduler1\app\build\intermediates\pre-dexed\debug\classes-389811a4409410cd85ef8cc6e179ec577cf0ac7b.jar
-C:\Users\neil\AndroidStudioProjects\RetentionScheduler1\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-cce04643a02a3b8b36cac91af6687c457a348132.jar
-C:\Users\neil\AndroidStudioProjects\RetentionScheduler1\app\build\intermediates\pre-dexed\debug\classes-fdca20271032e4eb895868d2f7cb96555b3246c6.jar
-C:\Users\neil\AndroidStudioProjects\RetentionScheduler1\app\build\intermediates\pre-dexed\debug\classes-4c4660b933f0646e5bd53086bd67a82c0596a8f0.jar

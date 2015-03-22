@@ -65,16 +65,16 @@ public class CreateEvent extends ActionBarActivity implements OnClickListener {
           setContentView(R.layout.create_event);
           name = (EditText) findViewById(R.id.event_name);
 		description = (EditText) findViewById(R.id.description_name);
-		date = (EditText) findViewById(R.id.dated);
-		time = (EditText) findViewById(R.id.time);
+		//date = (EditText) findViewById(R.id.dated);
+		//time = (EditText) findViewById(R.id.time);
 		file1 = (EditText) findViewById(R.id.file);
 		file2 = (EditText) findViewById(R.id.file1);
 		file3 = (EditText) findViewById(R.id.file2);
 		
           theButton = (Button)findViewById(R.id.add_events);
           theButton.setOnClickListener(this);
-          assocButt = (Button) findViewById(R.id.associate_notes);
-          assocButt.setOnClickListener(this);
+          //assocButt = (Button) findViewById(R.id.associate_notes);
+          //assocButt.setOnClickListener(this);
     }
 
      /*
@@ -90,21 +90,33 @@ public class CreateEvent extends ActionBarActivity implements OnClickListener {
           //respond to click
 		if (v.getId() == R.id.add_events) {
 			try {
-				dates = dao.writeFile(name, description, date, time, stringBuilder.toString());
-				Toast.makeText(CreateEvent.this, "Event Added!",Toast.LENGTH_LONG).show();
-				dao.getTitles().add(name.getText().toString());
-				dao.getDates().add(date.getText().toString());
-				Intent intent = new Intent(this, MainActivity.class);
+				//dates = dao.writeFile(name, description, date, time, stringBuilder.toString());
+				//Toast.makeText(CreateEvent.this, "Event Added!",Toast.LENGTH_LONG).show();
+				//dao.getTitles().add(name.getText().toString());
+				//dao.getDates().add(date.getText().toString());
+				
+				if (file1.getText() != null) {
+					stringBuilder.append(file1.getText().toString()+"\n");
+				}
+				if (file2.getText() != null) {
+					stringBuilder.append(file2.getText().toString()+"\n");
+				}
+				if (file3.getText() != null) {
+					stringBuilder.append(file3.getText().toString()+"\n");
+				}
+				
+				Intent intent = new Intent(this, Create1.class);
 				intent.putExtra("eventTitle", name.getText().toString());
-				intent.putExtra("dates", dates);
-				intent.putStringArrayListExtra("titleArray", dao.getTitles());
-				intent.putStringArrayListExtra("dateArray", dao.getDates());
+				intent.putExtra("description", description.getText().toString());
+				intent.putExtra("files",stringBuilder.toString());
+				//intent.putStringArrayListExtra("titleArray", dao.getTitles());
+				//intent.putStringArrayListExtra("dateArray", dao.getDates());
 				//System.out.println("titles.size() = "+dao.getSize(dao.getTitles())/2);
 				startActivity(intent);
 			}catch (Exception e) {
 				System.out.println(Log.getStackTraceString(e));
 			}
-		}
+		}/*
 		else if (v.getId() == R.id.associate_notes) {
 			if (file1.getText() != null) {
 				stringBuilder.append(file1.getText().toString()+"\n");
@@ -116,7 +128,7 @@ public class CreateEvent extends ActionBarActivity implements OnClickListener {
 				stringBuilder.append(file3.getText().toString()+"\n");
 			}
 			Toast.makeText(CreateEvent.this, "Files Associated!",Toast.LENGTH_LONG).show();
-		}
+		}*/
     }
 	
 	

@@ -18,21 +18,30 @@
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-		    android:name=".CreateEvent"
-		    android:label="create_event">
-		</activity>
-		 <activity
-		    android:name=".ManageActivity"
-		    android:label="manageactivity">
-		</activity>
-		<activity 
-		    android:name=".viewInfo"
-		    android:label="viewInfo">
-		</activity>
+            android:name=".CreateEvent"
+            android:label="create_event" >
+        </activity>
+        <activity
+            android:name=".ManageActivity"
+            android:label="manageactivity" >
+        </activity>
+        <activity
+            android:name=".viewInfo"
+            android:label="viewInfo" >
+        </activity>
+        <activity
+            android:name=".Create1"
+            android:label="@string/title_activity_create1" >
+        </activity>
+        <activity
+            android:name=".Delete"
+            android:label="@string/title_activity_delete" >
+        </activity>
     </application>
 
 </manifest>

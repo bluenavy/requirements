@@ -1,23 +1,25 @@
-
+<?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <string name="app_name">Retention Scheduler</string>
     <string name="create_event">CREATE EVENT</string>
     <string name="edit_event">EDIT EVENT</string>
-    
     <string name="action_settings">Settings</string>
-    <string android:id="@+id/string1" android:layout_height="wrap_content" android:layout_width="wrap_content" name="delete_event">DELETE EVENT</string>
-    <string android:layout_width="wrap_content" android:id="@+id/string1" android:layout_height="wrap_content" name="event_name">Event Name</string>
-    <string android:id="@+id/string1" android:layout_width="wrap_content" android:layout_height="wrap_content" name="activity_title">This is an activity!</string>
-    <color android:id="@+id/color1" android:layout_width="wrap_content" android:layout_height="wrap_content" name="white_color">#ffffff</color>
-    <string android:layout_height="wrap_content" android:id="@+id/string1" android:layout_width="wrap_content" name="open_activity_title">Open daw!</string>
-    <color android:id="@+id/color1" android:layout_height="wrap_content" android:layout_width="wrap_content" name="create_color">#D1CEBA</color>
-    <color android:layout_width="wrap_content" android:id="@+id/color1" android:layout_height="wrap_content" name="background">#FFFEE6</color>
-	<color android:id="@+id/color1" android:layout_width="wrap_content" android:layout_height="wrap_content" name="edit_color">#D1CEBA</color>
-	<color android:id="@+id/color1" android:layout_height="wrap_content" android:layout_width="wrap_content" name="delete_color">#D1CEBA</color>
+    <string android:id="@+id/string1" name="delete_event" android:layout_width="wrap_content" android:layout_height="wrap_content">DELETE EVENT</string>
+    <string android:id="@+id/string1" name="event_name" android:layout_width="wrap_content" android:layout_height="wrap_content">Event Name</string>
+    <string android:id="@+id/string1" name="activity_title" android:layout_width="wrap_content" android:layout_height="wrap_content">This is an activity!</string>
 
-	<style name="ButtonText">
-       <item name="android:layout_width">match_parent</item>
+    <color android:id="@+id/color1" name="white_color" android:layout_width="wrap_content" android:layout_height="wrap_content">#ffffff</color>
+
+    <string android:id="@+id/string1" name="open_activity_title" android:layout_width="wrap_content" android:layout_height="wrap_content">Open daw!</string>
+
+    <color android:id="@+id/color1" name="create_color" android:layout_width="wrap_content" android:layout_height="wrap_content">#D1CEBA</color>
+    <color android:id="@+id/color1" name="background" android:layout_width="wrap_content" android:layout_height="wrap_content">#FFFEE6</color>
+    <color android:id="@+id/color1" name="edit_color" android:layout_width="wrap_content" android:layout_height="wrap_content">#D1CEBA</color>
+    <color android:id="@+id/color1" name="delete_color" android:layout_width="wrap_content" android:layout_height="wrap_content">#D1CEBA</color>
+
+    <style name="ButtonText">
+        <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">#F8E5C7</item>
         <item name="android:gravity">center</item>
@@ -29,11 +31,18 @@
         <item name="android:shadowDy">1</item>
         <item name="android:shadowRadius">2</item>
     </style>
-	<string android:id="@+id/string1" android:layout_width="wrap_content" android:layout_height="wrap_content" name="hint_desc">Description</string>
-	<string android:layout_width="wrap_content" android:id="@+id/string1" android:layout_height="wrap_content" name="add_events">ADD</string>
-	<string android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/string1" name="assoc_note">ASSOCIATE FILES</string>
-	<string android:id="@+id/string1" android:layout_width="wrap_content" android:layout_height="wrap_content" name="assoc_slide">ASSOCIATE SLIDES</string>
-	<string android:id="@+id/string1" android:layout_height="wrap_content" android:layout_width="wrap_content" name="hint_date">MM/DD/YYYY</string>
-	<string android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/string1" name="hint_time">HH:MM</string>
-	<color android:id="@+id/color1" android:layout_width="wrap_content" android:layout_height="wrap_content" name="text_color">#F8E5C7</color>
+
+    <string android:id="@+id/string1" name="hint_desc" android:layout_width="wrap_content" android:layout_height="wrap_content">Description</string>
+    <string android:id="@+id/string1" name="add_events" android:layout_width="wrap_content" android:layout_height="wrap_content">ADD</string>
+    <string android:id="@+id/string1" name="assoc_note" android:layout_width="wrap_content" android:layout_height="wrap_content">ASSOCIATE FILES</string>
+    <string android:id="@+id/string1" name="assoc_slide" android:layout_width="wrap_content" android:layout_height="wrap_content">ASSOCIATE SLIDES</string>
+    <string android:id="@+id/string1" name="hint_date" android:layout_width="wrap_content" android:layout_height="wrap_content">MM/DD/YYYY</string>
+    <string android:id="@+id/string1" name="hint_time" android:layout_width="wrap_content" android:layout_height="wrap_content">HH:MM</string>
+
+    <color android:id="@+id/color1" name="text_color" android:layout_width="wrap_content" android:layout_height="wrap_content">#F8E5C7</color>
+
+    <string name="title_activity_create1">Create1</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_delete">Delete</string>
+
 </resources>

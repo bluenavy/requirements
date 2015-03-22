@@ -13,8 +13,11 @@ Changes made authored by David Relao: added methods, used arraylists, edited rea
 package com.example.retentionscheduler;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 //import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -35,53 +38,8 @@ public class DataAccessObject{
 	DataAccessObject (Context fileContext) {
 		DataAccessObject.fileContext = fileContext;
 	}
-
-     /*
-     Method name: writeFile
-     Purpose: Writes the data on a textfile
-     Calling Arguments:EditTex
-     Required Files:
-     Database Tables:
-     Return value: None
-     */
-
-	public String writeFile(EditText name, EditText description, EditText date, EditText time, String files) {
-		try {
-			FileOutputStream fos = fileContext.openFileOutput(name.getText().toString()+".txt", Context.MODE_PRIVATE);
-			OutputStreamWriter myOutWriter = new OutputStreamWriter(fos);
-			
-			myOutWriter.append(name.getText().toString());
-			myOutWriter.append("\n");
-
-			myOutWriter.append(description.getText().toString());
-			myOutWriter.append("\n");
-
-			myOutWriter.append(date.getText().toString());
-			myOutWriter.append("\n");
-
-			myOutWriter.append(time.getText().toString());
-			myOutWriter.append("\n");
-			
-			myOutWriter.append(files);
-			myOutWriter.append("\n");		
-			
-			myOutWriter.close();
-			fos.close();
-			dating.add(date.getText().toString());
-			titles.add(name.getText().toString());
-			System.out.println(titles.size()/2 +1);
-			System.out.println("Write SUCCESS!");
-			
-		}
-		catch (Exception e) {
-//			System.out.println("Error? "+Log.getStackTraceString(e));
-		};
-		
-		
-		return date.getText().toString();
-	}
-
-     /*
+	
+	 /*
      Method name: onClick
      Purpose: Creates the clickable buttons
      Calling Arguments:
@@ -110,10 +68,75 @@ public class DataAccessObject{
 		catch(Exception e){
 
 		}
-		current += "\n\n";
-		System.out.println(current);
+		current += "\n";
 		return current;
 	}
+
+     /*
+     Method name: writeFile
+     Purpose: Writes the data on a textfile
+     Calling Arguments:EditTex
+     Required Files:
+     Database Tables:
+     Return value: None
+     */
+
+	public String writeFile(String name, String description, String date, String time, String files) {
+		try {
+			File file = fileContext.getFileStreamPath("database.txt");
+			if(!file.exists()){
+				FileOutputStream fs1 = fileContext.openFileOutput("database.txt", Context.MODE_PRIVATE);
+				OutputStreamWriter myOutWriter1 = new OutputStreamWriter(fs1);
+			
+				myOutWriter1.append(name);
+				myOutWriter1.append("\n");
+				myOutWriter1.close();
+				fs1.close();
+			}else{	
+				FileOutputStream fs1 = new FileOutputStream(file, true);
+				OutputStreamWriter myOutWriter1 = new OutputStreamWriter(fs1);
+			
+				myOutWriter1.append(name);
+				myOutWriter1.append("\n");
+				myOutWriter1.close();
+				fs1.close();
+			}
+			FileOutputStream fos = fileContext.openFileOutput(name+".txt", Context.MODE_PRIVATE);
+			OutputStreamWriter myOutWriter = new OutputStreamWriter(fos);
+				
+			myOutWriter.append(date);
+			myOutWriter.append("\n");
+			
+			myOutWriter.append(name);
+			myOutWriter.append("\n");
+	
+			myOutWriter.append(description);
+			myOutWriter.append("\n");
+	
+			myOutWriter.append(time);
+			myOutWriter.append("\n");
+				
+			myOutWriter.append(files);
+			myOutWriter.append("\n");		
+				
+			myOutWriter.close();
+			fos.close();
+			dating.add(date);
+			titles.add(name);
+			System.out.println(titles.size()/2 +1);
+			System.out.println("Write SUCCESS!");
+			
+			
+		}
+		catch (Exception e) {
+//			System.out.println("Error? "+Log.getStackTraceString(e));
+		};
+		
+		
+		return date;
+	}
+
+    
 	
 	/*
     Method name: getTitles()

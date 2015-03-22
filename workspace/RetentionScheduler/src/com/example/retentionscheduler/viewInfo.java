@@ -50,54 +50,67 @@ public class viewInfo extends ActionBarActivity{
           setContentView(R.layout.event_information);
           TextView view = (TextView) findViewById(R.id.info);
           try {
-          Intent intent = getIntent();
-          name = intent.getStringExtra("eventTitle");
-          month = intent.getStringExtra("month");
-          dayOfMonth = intent.getStringExtra("dayOfMonth");
-          year = intent.getStringExtra("year");
-          dates = intent.getStringExtra("dates");
-          titles = intent.getStringArrayListExtra("titleArray");
-  	     dating = intent.getStringArrayListExtra("dateArray");
-          //button = (Button)findViewById(R.id.buttonEvent);
-         // button.setOnClickListener(this);
-          
-        	  //System.out.println(month+"/"+dayOfMonth+"/"+year);
-        	  //System.out.println(name);
-  	     view.setText("***NO EVENT TO BE VIEWED***\n");
-  	     if (titles.size() > 0) {
-  	     	for (int i=0; i<titles.size(); i+=2) {
-  	               if (dating.get(i).equals(month+"/"+dayOfMonth+"/"+year)) {
-					if (!view.getText().equals("***NO EVENT TO BE VIEWED***\n")) {
-						view.append(dao.readFile(titles.get(i)));
+	          Intent intent = getIntent();
+	          name = intent.getStringExtra("selecteddate");
+	          //button = (Button)findViewById(R.id.buttonEvent);
+	         // button.setOnClickListener(this);
+	          
+	        	  //System.out.println(month+"/"+dayOfMonth+"/"+year);
+	        	  //System.out.println(name);
+	  	     //view.setText("***NO EVENT TO BE VIEWED***\n");
+	  	     if (name.length() > 0) {
+	  	     	/*for (int i=0; i<titles.size(); i+=2) {
+	  	               if (dating.get(i).equals(month+"/"+dayOfMonth+"/"+year)) {
+						if (!view.getText().equals("***NO EVENT TO BE VIEWED***\n")) {
+							view.append(dao.readFile(titles.get(i)));
+						}
+						else {
+							view.setText(dao.readFile(titles.get(i)));
+						}
 					}
 					else {
-						view.setText(dao.readFile(titles.get(i)));
+						if (view.getText().equals("***NO EVENT TO BE VIEWED***\n")) {
+							view.setText("***NO EVENT TO BE VIEWED***\n");
+						}
 					}
-				}
-				else {
-					if (view.getText().equals("***NO EVENT TO BE VIEWED***\n")) {
-						view.setText("***NO EVENT TO BE VIEWED***\n");
-					}
-				}
+				}*/
+	  	     	String temp="";
+	  	     	String temp1="";
+	  	     	String temp2="";
+	  	     	for(int a=0;a<name.length();a++){
+	  	     		if(name.charAt(a)!='\n'){
+	  	     			temp=temp+name.charAt(a);
+	  	     		}else{
+	  	     			System.out.println(temp+""+a);
+	  	     			temp1=temp1+dao.readFile(temp);
+	  	     			for(int b=temp1.indexOf('\n')+1;b<temp1.length();b++){
+	  	     				temp2=temp2+temp1.charAt(b);
+	  	     			}
+	  	     			temp="";
+	  	     			temp1="";
+	  	     		}
+	  	     	}
+	  	     	view.setText(temp2);
+			}else{
+				view.setText("***NO EVENT TO BE VIEWED***\n");
 			}
-		}
-  				
-  				
-        	  /*if (dates.equals(month+"/"+dayOfMonth+"/"+year)) {
-        		  System.out.println(dates);
-        		  System.out.println(month+"/"+dayOfMonth+"/"+year);
-        		  view.append(month+"/"+dayOfMonth+"/"+year+"\n\n");
-        		  view.append(dao.readFile(name));
-        	  } */
-          		/*System.out.println(titles.size());
-	          if ((titles.size()/2) +1 > 0) {
-	          	for (int i=0; i<titles.size(); i++) {
-	          		view.append(dao.readFile(titles.get(i)));
-	          	}
-	          }
-	          else {
-	        	  view.append("***NO EVENT TO E VIEWED***");
-	          }*/
+	  				
+	  				
+	        	  /*if (dates.equals(month+"/"+dayOfMonth+"/"+year)) {
+	        		  System.out.println(dates);
+	        		  System.out.println(month+"/"+dayOfMonth+"/"+year);
+	        		  view.append(month+"/"+dayOfMonth+"/"+year+"\n\n");
+	        		  view.append(dao.readFile(name));
+	        	  } */
+	          		/*System.out.println(titles.size());
+		          if ((titles.size()/2) +1 > 0) {
+		          	for (int i=0; i<titles.size(); i++) {
+		          		view.append(dao.readFile(titles.get(i)));
+		          	}
+		          }
+		          else {
+		        	  view.append("***NO EVENT TO E VIEWED***");
+		          }*/
           }
           catch (Exception e) {};
 	}

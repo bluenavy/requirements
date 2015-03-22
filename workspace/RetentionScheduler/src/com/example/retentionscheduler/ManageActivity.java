@@ -29,6 +29,7 @@ import android.widget.Button;
 public class ManageActivity extends ActionBarActivity implements OnClickListener {
 	
 	private Button create_button;
+	private Button delete_button;
 	
 
      /*
@@ -46,6 +47,8 @@ public class ManageActivity extends ActionBarActivity implements OnClickListener
           setContentView(R.layout.manage);
           create_button = (Button)findViewById(R.id.createbutton);
           create_button.setOnClickListener(this);
+          delete_button = (Button)findViewById(R.id.deletebutton);
+          delete_button.setOnClickListener(this);
     }
 
      /*
@@ -59,10 +62,13 @@ public class ManageActivity extends ActionBarActivity implements OnClickListener
 	
 	public void onClick(View v){
 		if(v.getId()==create_button.getId()){
-    	    //the button was clicked
-    		Intent intent = new Intent(this, CreateEvent.class);
-    		startActivity(intent);
-    	}
+			//the button was clicked
+			Intent intent = new Intent(this, CreateEvent.class);
+			startActivity(intent);
+		}else if(v.getId()== delete_button.getId()){
+			Intent intent = new Intent(this, Delete.class);
+			startActivity(intent);
+		}
     }
 	
 	

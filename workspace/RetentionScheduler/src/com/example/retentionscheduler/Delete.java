@@ -1,6 +1,11 @@
 package com.example.retentionscheduler;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
+
 import android.support.v7.app.ActionBarActivity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -9,36 +14,71 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public class Delete extends ActionBarActivity implements OnClickListener{
 	DataAccessObject dao = new DataAccessObject(this);
-	
+	EditText file1;
+	String deletefile="";
+	String temp="";
+	String notdelete="";
+	Button button;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_delete);
+		TextView view = (TextView) findViewById(R.id.textView2);
+		file1 = (EditText) findViewById(R.id.editText1);
+		button = (Button)findViewById(R.id.button1);
+	     button.setOnClickListener(this);
 		try{
 			String data=dao.readFile("database");
-			
+			view.setText(data);
 		}catch(Exception e){}
 		
-		LinearLayout layout = (LinearLayout) findViewById(R.id.scrollView1);
-		LinearLayout row = new LinearLayout(this);
-		row.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
-
-		Button btnTag = new Button(this);
-		btnTag.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
-		btnTag.setText("neil");
-		btnTag.setId(1);
-		row.addView(btnTag);
-		layout.addView(row);
 	}
 		
 	
 	
 	public void onClick(View v){
-		
+		if (v.getId() == R.id.button1) {
+			try{
+				String data=dao.readFile("database");
+				if (file1.getText() != null) {
+					deletefile=""+file1.getText().toString();
+				}
+				for(int a=0;a<data.length();a++){
+					if(data.charAt(a)!='\n'){
+						temp=temp+data.charAt(a);
+					}else{
+						temp="";
+					}
+					if(temp.equals(deletefile)){
+						FileOutputStream fs1 = this.openFileOutput("database.txt", Context.MODE_PRIVATE);
+						OutputStreamWriter myOutWriter1 = new OutputStreamWriter(fs1);
+						for(int b=0;b<data.length();b++){
+							if(data.charAt(b)!='\n'){
+								notdelete=notdelete+data.charAt(b);
+							}else if((data.charAt(b)=='\n') && !notdelete.equals(temp)){
+								myOutWriter1.append(notdelete);
+								myOutWriter1.append("\n");
+								notdelete="";
+							}else if(notdelete.equals(temp)){
+								notdelete="";
+							}
+						}
+						myOutWriter1.close();
+						fs1.close();
+					}
+					String temp1=deletefile+".txt";
+					File file = new File(temp1);
+					boolean deleted = file.delete();
+				}
+			}catch(Exception e){}
+			
+		}
     }
 
 	@Override

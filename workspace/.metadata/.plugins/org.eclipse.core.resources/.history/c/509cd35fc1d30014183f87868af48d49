@@ -101,8 +101,6 @@ public class Create1 extends ActionBarActivity implements OnClickListener {
 				dao.writeFile(name, description, calendar, time, files);
 				
 			}catch(Exception e){}
-			Intent intent = new Intent(this, MainActivity.class);
-			startActivity(intent);
 		}
 	}
 	@Override

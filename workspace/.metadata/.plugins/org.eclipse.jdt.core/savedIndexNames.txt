@@ -1,5 +1,4 @@
 INDEX VERSION 1.126+C:\Users\neil\Desktop\CS191\adt-bundle-windows-x86-20140702\workspace\.metadata\.plugins\org.eclipse.jdt.core
-2934063279.index
 3241303241.index
 2264844607.index
 3516774447.index
